@@ -1,0 +1,50 @@
+<div ui-content-for="title">
+  <span>Datos de Acceso</span>
+</div>
+<div class="scrollable">
+ <div class="scrollable-content section">
+   <center><img src="img/tlogo.jpg" /></center>
+  <form role="form" ng-submit='login()'>
+    <fieldset>
+      <legend>Datos</legend>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tipo</th>
+      <th scope="col">Datos</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Usuario</th>
+      <td>Mark</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Nombre</th>
+      <td>Larry</td>
+    </tr>
+	<tr>
+      <th scope="row">Empresa</th>
+      <td>Larry</td>
+    </tr>
+	<tr>
+      <th scope="row">Rol</th>
+      <td>Larry</td>
+    </tr>
+  </tbody>
+</table>
+    </fieldset>
+    <hr>
+
+    <button class="btn btn-primary btn-block">
+      Salir
+    </button>
+
+    <div ui-content-for="navbarAction">
+      
+    </div>
+
+  </form>
+ </div>
+</div>
