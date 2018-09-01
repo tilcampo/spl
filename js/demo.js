@@ -7,6 +7,7 @@ angular.module('Authentication', []);
 angular.module('Muellemodulo', []);
 angular.module('ValidaModulo', []);
 angular.module('ValidarRutaMuelle', []);
+angular.module('Buques', []);
 angular.module('Home', []);
 
 // has dependent on mobile-angular-ui
@@ -29,7 +30,8 @@ app.config(function($routeProvider) {
   $routeProvider.when('/login', { controller: 'LoginController', templateUrl: 'formas/login/views/login.html', reloadOnSearch: false });
   $routeProvider.when('/muelle', { controller: 'MuelleControler', templateUrl: 'formas/muelle/views/muelle.html', reloadOnSearch: false });
   $routeProvider.when('/rutavalidar', { controller: 'MuelleControlerVerificar',templateUrl: 'formas/muelle/views/rutavalidar.html', reloadOnSearch: false });
-  $routeProvider.when('/verificarmuelle', { controller: 'MuelleControlerGuardar', templateUrl: 'formas/muelle/views/validarmuelle.html', reloadOnSearch: false });
+    $routeProvider.when('/verificarmuelle', { controller: 'MuelleControlerGuardar', templateUrl: 'formas/muelle/views/validarmuelle.html', reloadOnSearch: false });
+    $routeProvider.when('/buquesatracados', { controller: 'BuquesControler', templateUrl: 'formas/buques/views/atracados.html', reloadOnSearch: false });
   
 
 });
