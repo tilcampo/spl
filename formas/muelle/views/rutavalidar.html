@@ -1,143 +1,72 @@
-<div ui-content-for="title">
-  <span>Validar Ruta</span>
+<div>
+    <span>Validar Ruta</span>
 </div>
-
 <div class="scrollable">
- <div class="scrollable-content section">
-   <center><img src="img/tlogo.jpg" /></center>
-  <form role="form" ng-submit='validarRuta()'>
-    <fieldset>
-      <legend>Validar Datos Ruta</legend>
-        <div class="form-group has-success has-feedback">
-          <label>Folio</label>
-          <input type="number"
-                 ng-model="txbFolio"
-                 class="form-control"
-                 placeholder="">
-        </div>
-		
-		        <div class="form-group has-success has-feedback">
-          <label>Barco</label>
-          <input type="text"
-                 ng-model="txbBarco"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-
-		        <div class="form-group has-success has-feedback">
-          <label>Cliente</label>
-          <input type="text"
-                 ng-model="txbCliente"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-
-		        <div class="form-group has-success has-feedback">
-          <label>Producto</label>
-          <input type="text"
-                 ng-model="txbProducto"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-
-		        <div class="form-group has-success has-feedback">
-          <label>Placas</label>
-          <input type="text"
-                 ng-model="txbPlacas"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-
-		        <div class="form-group has-success has-feedback">
-          <label>ECO</label>
-          <input type="text"
-                 ng-model="txbECO"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-
-		        <div class="form-group has-success has-feedback">
-          <label>Usuario</label>
-          <input type="text"
-                 ng-model="txbUsuario"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-
-		        <div class="form-group has-success has-feedback">
-          <label>Remolque 1</label>
-          <input type="text"
-                 ng-model="txbRemolque1"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-
-		        <div class="form-group has-success has-feedback">
-          <label>Remolque 2</label>
-          <input type="text"
-                 ng-model="txbRemolque2"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-	        <div class="form-group has-success has-feedback">
-          <label>Carta Porte</label>
-          <input type="text"
-                 ng-model="Carta"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-
-		        <div class="form-group has-success has-feedback">
-          <label>Transportista</label>
-          <input type="text"
-                 ng-model="Transportista"
-                 class="form-control"
-                 placeholder="">
-        </div>
-	        <div class="form-group has-success has-feedback">
-          <label>Operador</label>
-          <input type="text"
-                 ng-model="Operador"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-			        <div class="form-group has-success has-feedback">
-          <label>Telefono</label>
-          <input type="number"
-                 ng-model="Telefono"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-			        <div class="form-group has-success has-feedback">
-          <label>Destino/Origen</label>
-          <input type="text"
-                 ng-model="Destino"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-    </fieldset>
-    <hr>
-
-    <button class="btn btn-primary btn-block">
-      Validar
-    </button>
-
-    <div ui-content-for="navbarAction">
-      
+    <div class="scrollable-content section">
+        <center>
+            <img src="img/tlogo.jpg">
+        </center>
+        <form role="form">
+            <fieldset>
+                <legend>Validar Datos Ruta</legend>
+                <div class="form-group has-success has-feedback">
+                    <label>Folio</label> <input class="form-control" placeholder="" type="number">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Barco</label> <select class="form-control">
+                        <option value="{{barco.id}}">
+                            {{barco.nombre}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Cliente</label> <select class="form-control">
+                        <option value="{{cliente.CVE_EXPIMP}}">
+                            {{cliente.NOMBRE}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Producto</label> <select class="form-control">
+                        <option value="{{producto.producto}}">
+                            {{producto.producto}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Placas</label> <input class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>ECO</label> <input class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Usuario</label> <input class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Remolque 1</label> <input class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Remolque 2</label> <input class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Carta Porte</label> <input class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Transportista</label> <input class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Operador</label> <input class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Telefono</label> <input class="form-control" placeholder="" type="number">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Destino/Origen</label> <input class="form-control" placeholder="" type="text">
+                </div>
+            </fieldset>
+            <hr>
+            <button class="btn btn-primary btn-block">Validar</button>
+            <div></div>
+        </form>
     </div>
-
-  </form>
- </div>
 </div>

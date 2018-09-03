@@ -10,7 +10,7 @@ angular.module('Muellemodulo')
         $scope.validar = function () {
 				
 				var Urls = "http://lvsoft.pro/logisticamovil/ws/getRutaID/" + $scope.Folio ;
-
+				$scope.loading = true;
             $http({
                 method: 'GET',
                 url: Urls
@@ -23,11 +23,13 @@ angular.module('Muellemodulo')
 				$location.url("/rutavalidar");
                 
 				}
-                else {
+				else {
+				    $scope.loading = false;
                     alert("No existe ese folio en sistema.");
                 }
 
             }, function errorCallback(response) {
+                $scope.loading = false;
                 alert("Error en la aplicación.");
             });
 				

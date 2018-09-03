@@ -11,7 +11,7 @@ angular.module('Buques')
                 url: Urls
             }).then(function successCallback(response) {
                 if (response.data.length == 1) {
-                    console.log(response);
+            
                 }
                 else {
                     alert("Error en usuario y/o password.");
