@@ -1,0 +1,32 @@
+<div ui-content-for="title">
+  <span>Verificar datos</span>
+</div>
+
+<div class="scrollable">
+ <div class="scrollable-content section">
+   <center><img src="img/tlogo.jpg" /></center>
+  <form role="form" ng-submit='validar()'>
+    <fieldset>
+      <legend>Verificar Ruta</legend>
+        <div class="form-group has-success has-feedback">
+          <label>Folio</label>
+          <input type="number"
+                 ng-model="Folio"
+                 class="form-control"
+                 placeholder="">
+        </div>
+
+    </fieldset>
+    <hr>
+
+    <button class="btn btn-primary btn-block">
+      Verificar
+    </button>
+
+    <div ui-content-for="navbarAction">
+      
+    </div>
+
+  </form>
+ </div>
+</div>

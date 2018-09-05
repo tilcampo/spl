@@ -1,0 +1,72 @@
+<div>
+    <span>Validar Ruta</span>
+</div>
+<div class="scrollable">
+    <div class="scrollable-content section">
+        <center>
+            <img src="img/tlogo.jpg">
+        </center>
+        <form role="form">
+            <fieldset>
+                <legend>Validar Datos Ruta</legend>
+                <div class="form-group has-success has-feedback">
+                    <label>Folio</label> <input  ng-model="txbFolio" class="form-control" placeholder="" type="number" ng-readonly="true">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Barco</label> <select ng-model="txbBarco" class="form-control" ng-change="changeBarco()">
+                        <option ng-repeat="barco in barcosConsulta" value="{{barco.id}}">
+                            {{barco.nombre}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Cliente</label> <select ng-model="txbCliente" class="form-control"  ng-change="changeCliente()">
+                        <option ng-repeat="cliente in clienteConsulta" value="{{cliente.CVE_EXPIMP}}" >
+                            {{cliente.NOMBRE}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Producto</label> <select ng-model="txbProducto" class="form-control">
+                        <option ng-repeat="producto in productoConsulta" value="{{producto.producto}}">
+                            {{producto.producto}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Placas</label> <input  ng-model="txbPlacas" class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>ECO</label> <input  ng-model="txbECO" class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Usuario</label> <input   ng-model="txbUsuario" class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Remolque 1</label> <input  ng-model="txbRemolque1" class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Remolque 2</label> <input ng-model="txbRemolque2" class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Carta Porte</label> <input  ng-model="Carta" class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Transportista</label> <input ng-model="Transportista" class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Operador</label> <input  ng-model="Operador" class="form-control" placeholder="" type="text">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Telefono</label> <input ng-model="Telefono" class="form-control" placeholder="" type="number">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Destino/Origen</label> <input ng-model="Destino" class="form-control" placeholder="" type="text">
+                </div>
+            </fieldset>
+            <hr>
+            <button class="btn btn-primary btn-block"  ng-click="validarRuta()">Validar</button>
+            <div></div>
+        </form>
+    </div>
+</div>

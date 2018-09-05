@@ -10,10 +10,14 @@ angular.module('ValidarRutaMuelle', []);
 angular.module('Buques', []);
 angular.module('Home', []);
 angular.module('AltaRuta', []);
+angular.module('Basculamodulo', []);
+angular.module('ValidaBasculaModulo', []);
+angular.module('ValidarRutaBascula', []);
+
 
 // has dependent on mobile-angular-ui
 //
-var app = angular.module('MobileAngularUiExamples', ['ngRoute', 'mobile-angular-ui', 'Authentication', 'Muellemodulo', 'ValidaModulo', 'ValidarRutaMuelle', 'Home','AltaRuta', 'mobile-angular-ui.gestures']);
+var app = angular.module('MobileAngularUiExamples', ['ngRoute', 'mobile-angular-ui', 'Authentication', 'Muellemodulo', 'ValidaModulo', 'ValidarRutaMuelle', 'Home', 'AltaRuta', 'Basculamodulo', 'ValidaBasculaModulo', 'ValidarRutaBascula','mobile-angular-ui.gestures']);
 
 app.run(function ($transform) {
     window.$transform = $transform;
@@ -34,6 +38,10 @@ app.config(function ($routeProvider) {
     $routeProvider.when('/rutavalidar', { controller: 'MuelleControlerVerificar', templateUrl: 'formas/muelle/views/rutavalidar.html', reloadOnSearch: false });
     $routeProvider.when('/verificarmuelle', { controller: 'MuelleControlerGuardar', templateUrl: 'formas/muelle/views/validarmuelle.html', reloadOnSearch: false });
     $routeProvider.when('/buquesatracados', { controller: 'BuquesControler', templateUrl: 'formas/buques/views/atracados.html', reloadOnSearch: false });
+
+    $routeProvider.when('/bascula', { controller: 'BasculaControler', templateUrl: 'formas/bascula/views/bascula.html', reloadOnSearch: false });
+    $routeProvider.when('/basculavalidar', { controller: 'basculaControlerVerificar', templateUrl: 'formas/bascula/views/basculavalidar.html', reloadOnSearch: false });
+    $routeProvider.when('/basculaguardar', { controller: 'BasculaControlerGuardar', templateUrl: 'formas/bascula/views/guardarbascula.html', reloadOnSearch: false });
 
 
 });

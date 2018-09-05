@@ -24,6 +24,11 @@
     <script src="formas/muelle/controllers.js"></script>
     <script src="formas/muelle/controllersVerificar.js"></script>
     <script src="formas/muelle/controllersRutaValidar.js"></script>
+
+    <script src="formas/bascula/controllers.js"></script>
+    <script src="formas/bascula/controllersBasculaValidar.js"></script>
+    <script src="formas/bascula/controllersBasculaVerificar.js"></script>
+
     <script src="formas/cargarruta/controllersRuta.js"></script>
 
 </head>
@@ -34,7 +39,7 @@
     <div ng-include="'formas/sidebar.html'"
          ui-track-as-search-param="true"
          class="sidebar sidebar-left"></div>
-    <div ng-include="'formas/sidebarRight.html'"
+    <div ng-include="'formas/login/views/logout.html'"
          class="sidebar sidebar-right"></div>
     <div class="app"
          ui-swipe-right="Ui.turnOn('uiSidebarLeft')"

@@ -1,0 +1,77 @@
+<div ui-content-for="title">
+    <span>Guardar Op. B&aacute;scula</span>
+</div>
+<div class="scrollable">
+    <div class="scrollable-content section">
+        <center><img src="img/tlogo.jpg" /></center>
+        <form role="form" ng-submit='GuardarBascula()'>
+            <fieldset>
+                <legend>Validar Datos Ruta</legend>
+                <div class="form-group has-success has-feedback">
+                    <label>Folio RUTA</label>
+                    <input type="number"
+                           ng-model="txbFolio"
+                           class="form-control"
+                           placeholder="" ng-readonly="true">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Fecha-Hora VACIO</label>
+                    <input type="datetime-local"
+                           ng-model="fhVacio" id="fhVacio"
+                           class="form-control"
+                           placeholder="Bodega" required>
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Fecha-Hora PESAJE</label>
+                    <input type="datetime-local"
+                           ng-model="fhTara" id="fhTara"
+                           class="form-control"
+                           placeholder="" required>
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>TICKET</label>
+                    <input type="number"
+                           ng-model="ticket"
+                           class="form-control"
+                           placeholder="" required>
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Peso BRUTO</label>
+                    <input type="number"
+                           ng-model="pesoButro"
+                           class="form-control"
+                           placeholder="" required >
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Peso TARA</label>
+                    <input type="number"
+                           ng-model="pesoTara"
+                           class="form-control"
+                           placeholder="" required ng-change="ValidarPeso()">
+                </div>
+
+                <div class="form-group has-success has-feedback">
+                    <label>Peso NETO</label>
+                    <input type="number"
+                           ng-model="pesoNeto"
+                           class="form-control"
+                           placeholder="" ng-readonly="true">
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Nro. Copia Simple</label>
+                    <input type="text"
+                           ng-model="copiaSimple"
+                           class="form-control"
+                           placeholder="">
+                </div>
+
+            </fieldset>
+            <hr>
+            <button class="btn btn-primary btn-block">
+                Guardar
+            </button>
+            <div ui-content-for="navbarAction">
+            </div>
+        </form>
+    </div>
+</div>

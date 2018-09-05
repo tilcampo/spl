@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('Muellemodulo')
+angular.module('Basculamodulo')
 
-.controller('MuelleControler',
+.controller('BasculaControler',
     ['$http', '$scope', '$rootScope', '$location',
     function ($http, $scope, $rootScope, $location) {
 
@@ -20,12 +20,12 @@ angular.module('Muellemodulo')
 				
 				sessionStorage.FolioValido =  response.data[0].folio;
 				
-				$location.url("/rutavalidar");
+                    $location.url("/basculavalidar");
                 
 				}
 				else {
 				    $scope.loading = false;
-                    alert("El folio no ha sido registrado en MUELLE");
+                    alert("No existe ese folio en sistema.");
                 }
 
             }, function errorCallback(response) {

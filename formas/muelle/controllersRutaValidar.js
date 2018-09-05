@@ -45,7 +45,7 @@ angular.module('ValidarRutaMuelle').controller('MuelleControlerGuardar', ['$http
 
                 if (response.data == 1) {
                     
-                    $location.url("/verificarmuelle");
+                    $location.url("/");
                 }
 
 
