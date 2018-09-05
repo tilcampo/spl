@@ -28,6 +28,8 @@ angular.module('Authentication')
             }).then(function successCallback(response) {
                 if (response.data.length == 1) {
 
+                  
+
                     sessionStorage.isUSer = response.data[0].id;
                     sessionStorage.name = response.data[0].name;
                     sessionStorage.id_company = response.data[0].id_company;
@@ -35,6 +37,13 @@ angular.module('Authentication')
                     sessionStorage.tipo = response.data[0].tipo;
                     sessionStorage.nombre = response.data[0].nombre;
                     $scope.loading = false;
+                    $http.get("http://lvsoft.pro/logisticamovil/ws/getPermisos/" + sessionStorage.tipo)
+                        .then(function (response) {
+                            
+                            $scope.permisos = response.data;
+                            console.log($scope.permisos);
+                        });
+                    window.location.reload();
                     $location.url("/");
                   
                 }

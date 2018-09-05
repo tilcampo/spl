@@ -1,153 +1,134 @@
 <div ui-content-for="title">
-  <span>Cargar Ruta</span>
+    <span>Cargar Ruta</span>
 </div>
 
 <div class="scrollable">
- <div class="scrollable-content section">
-   <center><img src="img/tlogo.jpg" /></center>
-  <form role="form" ng-submit='login()'>
-    <fieldset>
-      <legend>Ruta</legend>
-        <div class="form-group has-success has-feedback">
-          <label>Folio</label>
-          <input type="number"
-                 ng-model="Folio"
-                 class="form-control"
-                 placeholder="">
-        </div>
-		
-		        <div class="form-group has-success has-feedback">
-          <label>Barco</label>
-          <input type="text"
-                 ng-model="Barco"
-                 class="form-control"
-                 placeholder="">
-        </div>
+    <div class="scrollable-content section">
+        <center><img src="img/tlogo.jpg" /></center>
+        <form role="form" >
+            <fieldset>
+                <legend>Ruta</legend>
+                <div class="form-group has-success has-feedback">
+                    <label>Folio</label>
+                    <input type="number"
+                           ng-model="txbFolio"
+                           class="form-control"
+                           placeholder="" required>
+                </div>
+
+                <div class="form-group has-success has-feedback">
+                    <label>Barco</label>
+                    <select ng-model="txbBarco" class="form-control" ng-change="changeBarco()">
+                        <option ng-repeat="barco in barcosConsulta" value="{{barco.id}}">
+                            {{barco.nombre}}
+                        </option>
+                    </select>
+                </div>
 
 
-		        <div class="form-group has-success has-feedback">
-          <label>Cliente</label>
-          <input type="text"
-                 ng-model="Cliente"
-                 class="form-control"
-                 placeholder="">
-        </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Cliente</label> <select ng-model="txbCliente" class="form-control" ng-change="changeCliente()">
+                        <option ng-repeat="cliente in clienteConsulta" value="{{cliente.CVE_EXPIMP}}">
+                            {{cliente.NOMBRE}}
+                        </option>
+                    </select>
+                </div>
 
 
-		        <div class="form-group has-success has-feedback">
-          <label>Producto</label>
-          <input type="text"
-                 ng-model="Producto"
-                 class="form-control"
-                 placeholder="">
-        </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Producto</label> <select ng-model="txbProducto" class="form-control">
+                        <option ng-repeat="producto in productoConsulta" value="{{producto.producto}}">
+                            {{producto.producto}}
+                        </option>
+                    </select>
+                </div>
 
 
-		        <div class="form-group has-success has-feedback">
-          <label>Placas</label>
-          <input type="text"
-                 ng-model="Placas"
-                 class="form-control"
-                 placeholder="">
-        </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Placas</label>
+                    <input type="text"
+                           ng-model="txbPlacas"
+                           class="form-control"
+                           placeholder="" required>
+                </div>
 
 
-		        <div class="form-group has-success has-feedback">
-          <label>ECO</label>
-          <input type="text"
-                 ng-model="ECO"
-                 class="form-control"
-                 placeholder="">
-        </div>
+                <div class="form-group has-success has-feedback">
+                    <label>ECO</label>
+                    <input type="text"
+                           ng-model="txbECO"
+                           class="form-control"
+                           placeholder="">
+                </div>
+
+                <div class="form-group has-success has-feedback">
+                    <label>Remolque 1</label>
+                    <input type="text"
+                           ng-model="txbRemolque1"
+                           class="form-control"
+                           placeholder="">
+                </div>
+
+                <div class="form-group has-success has-feedback">
+                    <label>Remolque 2</label>
+                    <input type="text"
+                           ng-model="txbRemolque2"
+                           class="form-control"
+                           placeholder="">
+                </div>
+                
+
+                <div class="form-group has-success has-feedback">
+                    <label>Carta Porte</label>
+                    <input type="text"
+                           ng-model="Carta"
+                           class="form-control"
+                           placeholder="">
+                </div>
 
 
-		        <div class="form-group has-success has-feedback">
-          <label>Usuario</label>
-          <input type="text"
-                 ng-model="Usuario"
-                 class="form-control"
-                 placeholder="">
-        </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Transportista</label>
+                    <input type="text"
+                           ng-model="Transportista"
+                           class="form-control"
+                           placeholder="" >
+                </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Operador</label>
+                    <input type="text"
+                           ng-model="Operador"
+                           class="form-control"
+                           placeholder="" required>
+                </div>
 
+                <div class="form-group has-success has-feedback">
+                    <label>Telefono</label>
+                    <input type="number"
+                           ng-model="Telefono"
+                           class="form-control"
+                           placeholder="">
+                </div>
 
-		        <div class="form-group has-success has-feedback">
-          <label>Remolque 1</label>
-          <input type="text"
-                 ng-model="Remolque1"
-                 class="form-control"
-                 placeholder="">
-        </div>
+                <div class="form-group has-success has-feedback">
+                    <label>Destino/Origen</label>
+                    <input type="text"
+                           ng-model="Destino"
+                           class="form-control"
+                           placeholder="" required>
+                </div>
 
+            </fieldset>
+            <hr>
 
-		        <div class="form-group has-success has-feedback">
-          <label>Remolque 2</label>
-          <input type="text"
-                 ng-model="Remolque2"
-                 class="form-control"
-                 placeholder="">
-        </div>
+            <button class="btn btn-primary btn-block" ng-click="guardarRuta()">
+                Guardar
+            </button>
 
+            <div ui-content-for="navbarAction">
 
-		        <div class="form-group has-success has-feedback">
-          <label>Usuario</label>
-          <input type="text"
-                 ng-model="usuario"
-                 class="form-control"
-                 placeholder="">
-        </div>
+            </div>
 
-
-		        <div class="form-group has-success has-feedback">
-          <label>Carta Porte</label>
-          <input type="text"
-                 ng-model="Carta"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-
-		        <div class="form-group has-success has-feedback">
-          <label>Transportista</label>
-          <input type="text"
-                 ng-model="Transportista"
-                 class="form-control"
-                 placeholder="">
-        </div>
-	        <div class="form-group has-success has-feedback">
-          <label>Operador</label>
-          <input type="text"
-                 ng-model="Operador"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-			        <div class="form-group has-success has-feedback">
-          <label>Telefono</label>
-          <input type="number"
-                 ng-model="Telefono"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-			        <div class="form-group has-success has-feedback">
-          <label>Destino/Origen</label>
-          <input type="text"
-                 ng-model="Destino"
-                 class="form-control"
-                 placeholder="">
-        </div>
-
-    </fieldset>
-    <hr>
-
-    <button class="btn btn-primary btn-block">
-      Ingresar
-    </button>
-
-    <div ui-content-for="navbarAction">
-      
+        </form>
     </div>
-
-  </form>
- </div>
 </div>

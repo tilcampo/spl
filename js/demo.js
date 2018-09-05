@@ -9,10 +9,11 @@ angular.module('ValidaModulo', []);
 angular.module('ValidarRutaMuelle', []);
 angular.module('Buques', []);
 angular.module('Home', []);
+angular.module('AltaRuta', []);
 
 // has dependent on mobile-angular-ui
 //
-var app = angular.module('MobileAngularUiExamples', ['ngRoute', 'mobile-angular-ui', 'Authentication', 'Muellemodulo', 'ValidaModulo', 'ValidarRutaMuelle', 'Home', 'mobile-angular-ui.gestures']);
+var app = angular.module('MobileAngularUiExamples', ['ngRoute', 'mobile-angular-ui', 'Authentication', 'Muellemodulo', 'ValidaModulo', 'ValidarRutaMuelle', 'Home','AltaRuta', 'mobile-angular-ui.gestures']);
 
 app.run(function ($transform) {
     window.$transform = $transform;
@@ -26,7 +27,7 @@ app.run(function ($transform) {
 app.config(function ($routeProvider) {
 
     $routeProvider.when('/', { controller: 'HomeController', templateUrl: 'formas/home/views/home.html', reloadOnSearch: false });
-    $routeProvider.when('/ruta', { templateUrl: 'formas/cargarruta/views/ruta.html', reloadOnSearch: false });
+    $routeProvider.when('/ruta', { controller: 'AltaRutaControler', templateUrl: 'formas/cargarruta/views/ruta.html', reloadOnSearch: false });
     $routeProvider.when('/logout', { templateUrl: 'formas/login/views/logout.html', reloadOnSearch: false });
     $routeProvider.when('/login', { controller: 'LoginController', templateUrl: 'formas/login/views/login.html', reloadOnSearch: false });
     $routeProvider.when('/muelle', { controller: 'MuelleControler', templateUrl: 'formas/muelle/views/muelle.html', reloadOnSearch: false });
