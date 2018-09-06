@@ -8,7 +8,26 @@ angular.module('AltaRuta')
                 $scope.barcosConsulta = [];
                 $scope.clienteConsulta = [];
                 $scope.productoConsulta = [];
+                $scope.unidadConsulta = [];
+                $scope.tipoOperacion = [];
 
+                $http({
+                    method: 'GET',
+                    url: 'http://lvsoft.pro/logisticamovil/ws/tipoUnidad'
+                }).then(function successCallback(response) {
+                    $scope.unidadConsulta = response.data;
+                }, function errorCallback(response) {
+                    alert("Error en la aplicación.");
+                    });
+
+                $http({
+                    method: 'GET',
+                    url: 'http://lvsoft.pro/logisticamovil/ws/tipoOperacionRuta'
+                }).then(function successCallback(response) {
+                    $scope.tipoOperacion = response.data;
+                }, function errorCallback(response) {
+                    alert("Error en la aplicación.");
+                });
 
                 $http({
                     method: 'GET',
@@ -22,13 +41,16 @@ angular.module('AltaRuta')
 
 
 
+
+
+
                 $scope.changeBarco = function () {
 
                     if (Number.isInteger($scope.txbCliente) == false) {
                         $scope.txbCliente = 0;
                     }
                     else {
-                        console.log("No se vaklidoo");
+                        console.log("No se validoo");
                     }
                     $http({
                         method: 'GET',
@@ -73,7 +95,7 @@ angular.module('AltaRuta')
                             producto: $scope.txbProducto, placas: $scope.txbPlacas,
                             reco: $scope.txbECO, remonque1: $scope.txbRemolque1, remolque2: $scope.txbRemolque2, rcartap: $scope.Carta,
                             rtrans: $scope.Transportista, roperador: $scope.Operador, telefono: $scope.Telefono, rdestino: $scope.Destino,
-                            usuario: parseInt(sessionStorage.isUSer)
+                            usuario: parseInt(sessionStorage.isUSer), tipo_servicio: $scope.txbTipoUnidad, tipo_unidad: $scope.txbTipoUnidadOperacion
                         }
                     }
 
@@ -85,6 +107,7 @@ angular.module('AltaRuta')
                             alert("Se ha agregado la RUTA :" + $scope.txbFolio);
                             
                         } else {
+                            console.log(response.data);
                             alert("No se pudo agregar la RUTA :" + $scope.txbFolio+ " ya ha sido agregada anteriormente.");
                         }
                         if (response.data == "1") {
